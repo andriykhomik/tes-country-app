@@ -1,0 +1,84 @@
+<div
+  *ngIf="countryDetails$ | async as country; else loader"
+  class="country-detail-container"
+>
+  <div class="country-details-wrapper">
+    <h1 class="country__name">{{ country.name.common }}</h1>
+
+    <div class="country__main-info">
+      <div class="country__flag flag-wrapper">
+        <img
+          class="flag-wrapper__image"
+          [src]="country.flags.svg"
+          [alt]="country.flags.alt || country.name.official"
+        />
+      </div>
+
+      <div class="country__code-cca">
+        {{ country.cca3 }}
+      </div>
+    </div>
+
+    <div class="country__data capital">
+      <span class="data__title">Capital:</span>&nbsp;<span
+        class="data__value"
+        >{{ country.capital }}</span
+      >
+    </div>
+
+    <div class="country__data currency">
+      <span class="data__title">Currency:</span>&nbsp;<span
+        class="data__value"
+        >{{ transformCurrency(country.currencies) }}</span
+      >
+    </div>
+
+    <div class="country__data population">
+      <span class="data__title">Population:</span>&nbsp;
+      <span
+        *ngIf="country.population > 5000000; else people"
+        class="data__value"
+        >{{ country.population / 1000000 | number : "0.0-0" }}&nbsp;<span
+          >mln</span
+        ></span
+      >
+      <ng-template #people>
+        <span class="data__value"
+          >{{ country.population | number : "0.0-0" }}&nbsp;<span
+            >people</span
+          ></span
+        >
+      </ng-template>
+    </div>
+
+    <div class="country__data region">
+      <span class="data__title">Region:</span>&nbsp;<span class="data__value">{{
+        country.region
+      }}</span>
+    </div>
+
+    <div class="country__data subregion">
+      <span class="data__title">Subregion:</span>&nbsp;<span
+        class="data__value"
+        >{{ country.subregion }}</span
+      >
+    </div>
+
+    <div class="country__data timezones">
+      <span class="data__title">{{
+        country.timezones.length > 1 ? "Timezones:" : "Timezone:"
+      }}</span
+      >&nbsp;<span class="data__value">{{ country.timezones }}</span>
+    </div>
+
+    <div class="country__data area">
+      <span class="data__title">Area:</span>&nbsp;<span class="data__value"
+        >{{ country.area }}&nbsp;<span class="data__value">&#x33A2;</span></span
+      >
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

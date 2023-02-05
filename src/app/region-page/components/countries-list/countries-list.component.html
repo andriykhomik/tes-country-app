@@ -1,0 +1,23 @@
+<div
+  *ngIf="regionCountriesList$ | async as countriesList; else loader"
+  class="countries-list-wrapper"
+>
+  <div *ngIf="regionName" class="selected-region">
+    <span class="selected-region__region">Region:</span>&nbsp;<span
+      class="selected-region__region_name"
+      >{{ regionName }}</span
+    >
+  </div>
+
+  <div class="country-wrapper">
+    <app-country
+      class="country-wrapper__country"
+      *ngFor="let country of countriesList"
+      [country]="country"
+    ></app-country>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

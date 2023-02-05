@@ -1,1 +1,130 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  --dark: #212832;
+  --light: #fdfcfc;
+  --dark-blue: #182c47;
+  --accent-green: #287373;
+  --dark-green: #075c5c;
+  --active-green: #004747;
+  --gray: #687281;
+  --yellow: #fde7b2;
+
+  --dark-blue-opacity: rgba(24, 44, 71, 5%);
+
+  --card-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  --hover-card-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  --header-shadow: rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px,
+    rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px,
+    rgba(0, 0, 0, 0.09) 0 32px 16px;
+
+  --footer-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
+}
+
+*,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.1px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: no-repeat fixed linear-gradient(#fdecc3, #b3cff6);
+  height: 100vh;
+  color: var(--dark);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: var(--dark-blue);
+  text-decoration: none;
+  outline: none;
+
+  &:hover {
+    color: var(--accent-green);
+    cursor: pointer;
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--dark-color);
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--dark-color);
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--dark-color);
+}
+
+@mixin button {
+  text-transform: capitalize;
+  font-size: 20px;
+  white-space: nowrap;
+  border: none;
+  color: var(--light);
+  border-radius: 8px;
+  background-color: var(--accent-green);
+  padding: 8px 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--accent-green);
+  }
+
+  &:active {
+    background-color: var(--active-green);
+  }
+
+  &:disabled {
+    cursor: auto;
+    background-color: var(--gray);
+  }
+}
+
+.cdk-overlay-pane {
+  overflow: auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.cdk-overlay-pane.info-dialog {
+  & .mat-dialog-container {
+    padding: 16px;
+  }
+}

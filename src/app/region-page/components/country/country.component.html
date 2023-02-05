@@ -1,0 +1,17 @@
+<div
+  *ngIf="country"
+  [routerLink]="['/country', country.name.official]"
+  class="country-wrapper"
+>
+  <div class="country">
+    <p class="country__name">{{ country.name.official }}</p>
+
+    <div class="country__flag flag">
+      <img
+        class="flag__image"
+        [src]="country.flags.svg"
+        [alt]="country.name.official"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+.country-wrapper {
+  padding: 10px;
+  height: 100%;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 10px;
+  height: 100%;
+  border-radius: 6px;
+  background-color: var(--dark-blue-opacity);
+  box-shadow: var(--card-shadow);
+  transition: 0.2s ease-in;
+
+  &__name {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--dark);
+    white-space: pre-wrap;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: var(--hover-card-shadow);
+    transition: 0.2s ease-in;
+  }
+}
+
+.flag {
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    max-height: 40px;
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    height: auto;
+    vertical-align: middle;
+  }
+}

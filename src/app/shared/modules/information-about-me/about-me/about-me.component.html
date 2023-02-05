@@ -1,0 +1,92 @@
+<div class="about-me">
+  <h2 class="person-name">
+    <span>{{ informationAboutMe.name }}</span
+    >&nbsp;<span>{{ informationAboutMe.surname }}</span>
+  </h2>
+
+  <p class="person-position w500">
+    {{ informationAboutMe.position }}
+  </p>
+
+  <div class="person-contacts">
+    <h3>Contacts</h3>
+
+    <div class="person-contacts__list">
+      <p class="contact tel w500">
+        <span class="contact__title">Tel:</span>&nbsp;<span
+          class="contact__info"
+          >{{ informationAboutMe.contacts.tel }}</span
+        >
+      </p>
+      <p class="contact email w500">
+        <span class="contact__title">Email:</span>&nbsp;<span
+          class="contact__info"
+        >
+          <a
+            [href]="
+              'mailto:' +
+              informationAboutMe.contacts.email +
+              '= Feedback&body = Message'
+            "
+            >{{ informationAboutMe.contacts.email }}</a
+          ></span
+        >
+      </p>
+      <p class="contact linkedin w500">
+        <span class="contact__title">LinkedIn:</span>&nbsp;<span
+          class="contact__info"
+          ><a [href]="informationAboutMe.contacts.linkedIn" target="_blank">{{
+            informationAboutMe.contacts.linkedIn
+          }}</a></span
+        >
+      </p>
+      <p class="contact skype w500">
+        <span class="contact__title">Skype:</span>&nbsp;<span
+          class="contact__info"
+          >{{ informationAboutMe.contacts.skype }}</span
+        >
+      </p>
+    </div>
+  </div>
+
+  <div class="hard-skills">
+    <h3>Hard Skills:</h3>
+
+    <ul>
+      <li *ngFor="let skill of informationAboutMe.hardSkills">{{ skill }}</li>
+    </ul>
+  </div>
+
+  <div class="soft-skills">
+    <h3>Soft Skills:</h3>
+
+    <ul>
+      <li *ngFor="let skill of informationAboutMe.softSkills">{{ skill }}</li>
+    </ul>
+  </div>
+
+  <div class="languages">
+    <h3>Languages:</h3>
+
+    <div *ngFor="let skill of informationAboutMe.languages">
+      <span class="skill-name w500">{{ skill.name }}&nbsp;-</span>&nbsp;<span
+        class="skill-level"
+        >{{ skill.level }}</span
+      >
+    </div>
+  </div>
+
+  <div class="languages">
+    <h3>Interests:</h3>
+
+    <span
+      *ngFor="let interest of informationAboutMe.interests"
+      class="interest-name w500"
+      >{{ interest }}</span
+    >
+  </div>
+
+  <div class="close-wrapper" mat-dialog-actions>
+    <button class="close-button" mat-dialog-close>Close</button>
+  </div>
+</div>

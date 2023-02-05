@@ -1,0 +1,11 @@
+<div class="header-wrapper">
+  <app-logo></app-logo>
+
+  <p class="header-title">{{ mainService.headerTitle$ | async }}</p>
+
+  <div class="header__back-button">
+    <app-back-button
+      *ngIf="(mainService.headerTitle$ | async) !== homePageTitle"
+    ></app-back-button>
+  </div>
+</div>

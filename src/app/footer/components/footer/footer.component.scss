@@ -1,0 +1,18 @@
+.footer-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  background-color: var(--dark-blue-opacity);
+  box-shadow: var(--footer-shadow);
+}
+
+.footer__about {
+  color: var(--dark-blue);
+  font-size: 24px;
+  font-weight: 600;
+
+  &:hover {
+    color: var(--accent-green);
+    cursor: pointer;
+  }
+}

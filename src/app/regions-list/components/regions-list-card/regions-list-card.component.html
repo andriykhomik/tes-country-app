@@ -1,0 +1,8 @@
+<div class="region-card" [routerLink]="'region/' + region.name">
+  <span class="region-card__name">{{ region.name }}</span>
+  <img
+    class="region-card__image image"
+    [src]="region.regionImage"
+    [alt]="region.name"
+  />
+</div>

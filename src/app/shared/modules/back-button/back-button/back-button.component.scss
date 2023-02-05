@@ -1,0 +1,6 @@
+@import "src/styles";
+
+.back-button {
+  @include button;
+  box-shadow: var(--card-shadow);
+}

@@ -1,0 +1,1 @@
+export type RegionsListItemType = 'africa' | 'americas' | 'asia' | 'europe' | 'oceania';
