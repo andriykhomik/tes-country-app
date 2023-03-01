@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CountryDetailsService } from '@app/country-detail-page/country-details.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderModule } from '@shared/modules/loader/loader.module';
+import { TransformCurrencyPipe } from './pipes/transform-currency.pipe';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CountryDetailsPageComponent],
+  declarations: [CountryDetailsPageComponent, TransformCurrencyPipe],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
