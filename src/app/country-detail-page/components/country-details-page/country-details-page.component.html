@@ -29,7 +29,7 @@
     <div class="country__data currency">
       <span class="data__title">Currency:</span>&nbsp;<span
         class="data__value"
-        >{{ transformCurrency(country.currencies) }}</span
+        >{{ country.currencies | transformCurrency }}</span
       >
     </div>
 
